@@ -1,0 +1,34 @@
+{
+    "name": "shimoning/formatter",
+    "version": "0.0.1",
+    "description": "各種変換ユーティリティ",
+    "minimum-stability": "stable",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shimon Haga",
+            "email": "shimon.haga@shimoning.com"
+        }
+    ],
+    "keywords": [
+        "format",
+        "time",
+        "sql"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Shimoning\\Formatter\\": "src/"
+        }
+    },
+    "require-dev": {
+        "psy/psysh": "@stable",
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit"
+        ]
+    }
+
+}
