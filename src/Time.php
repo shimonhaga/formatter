@@ -13,9 +13,9 @@ class Time
      */
     static public function number2clock($number, $separator = ':'): string
     {
-        $t0 = floor($number / 60);
+        $t0 = \floor($number / 60);
         $t1 = $number % 60;
-        return $t0 . $separator . str_pad($t1, 2, 0, STR_PAD_LEFT);
+        return $t0 . $separator . \str_pad($t1, 2, 0, STR_PAD_LEFT);
     }
 
     /**
@@ -27,8 +27,8 @@ class Time
      */
     static public function clock2number($clock, $separator = ':'): int
     {
-        $times = explode($separator, $clock);
-        return count($times) >= 2
+        $times = \explode($separator, $clock);
+        return \count($times) >= 2
             ? $times[0] * 60 + $times[1] * 1
             : 0;
     }

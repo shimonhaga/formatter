@@ -7,25 +7,25 @@ class SqlTest extends TestCase
 {
     public function test_sanitizeTextForSearchQuery()
     {
-        $sanitized = Sql::sanitizeTextForSearchQuery('test');
-        $this->assertEquals('test', $sanitized);
+        $result = Sql::sanitizeTextForSearchQuery('test');
+        $this->assertEquals('test', $result);
 
-        $sanitized = Sql::sanitizeTextForSearchQuery('%test');
-        $this->assertEquals('\%test', $sanitized);
+        $result = Sql::sanitizeTextForSearchQuery('%test');
+        $this->assertEquals('\%test', $result);
 
-        $sanitized = Sql::sanitizeTextForSearchQuery('test%');
-        $this->assertEquals('test\%', $sanitized);
+        $result = Sql::sanitizeTextForSearchQuery('test%');
+        $this->assertEquals('test\%', $result);
 
-        $sanitized = Sql::sanitizeTextForSearchQuery('_test');
-        $this->assertEquals('\_test', $sanitized);
+        $result = Sql::sanitizeTextForSearchQuery('_test');
+        $this->assertEquals('\_test', $result);
 
-        $sanitized = Sql::sanitizeTextForSearchQuery('test_');
-        $this->assertEquals('test\_', $sanitized);
+        $result = Sql::sanitizeTextForSearchQuery('test_');
+        $this->assertEquals('test\_', $result);
 
-        $sanitized = Sql::sanitizeTextForSearchQuery('\test');
-        $this->assertEquals('\\\test', $sanitized);
+        $result = Sql::sanitizeTextForSearchQuery('\test');
+        $this->assertEquals('\\\test', $result);
 
-        $sanitized = Sql::sanitizeTextForSearchQuery('test\a');
-        $this->assertEquals('test\\\a', $sanitized);
+        $result = Sql::sanitizeTextForSearchQuery('test\a');
+        $this->assertEquals('test\\\a', $result);
     }
 }

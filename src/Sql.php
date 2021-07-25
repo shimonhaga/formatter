@@ -12,7 +12,7 @@ class Sql
      */
     static public function sanitizeTextForSearchQuery(string $text): string
     {
-        return str_replace(
+        return \str_replace(
             ['\\', '%', '_'],
             ['\\\\', '\%', '\_'],
             $text

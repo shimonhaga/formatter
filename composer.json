@@ -1,6 +1,6 @@
 {
     "name": "shimoning/formatter",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "各種変換ユーティリティ",
     "minimum-stability": "stable",
     "type": "library",
@@ -13,7 +13,11 @@
     ],
     "keywords": [
         "format",
+        "clock",
         "time",
+        "number",
+        "numeric",
+        "number_format",
         "sql"
     ],
     "autoload": {
