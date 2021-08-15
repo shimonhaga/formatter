@@ -16,7 +16,7 @@
 その後以下でインストールする。
 
 ```bash
-composer install shimoning/formatter
+composer require shimoning/formatter
 ```
 
 ## Usage
