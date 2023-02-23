@@ -1,6 +1,6 @@
 {
     "name": "shimoning/formatter",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "各種変換ユーティリティ",
     "minimum-stability": "stable",
     "type": "library",
@@ -36,5 +36,4 @@
             "vendor/bin/phpunit"
         ]
     }
-
 }
