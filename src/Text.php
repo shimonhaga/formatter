@@ -7,7 +7,7 @@ class Text
     /**
      * マルチバイト対応で、文字列の前後から空白を取り除く
      *
-     * @param string $numeric
+     * @param string $string
      * @return string
      */
     static public function trim(string $string): string
@@ -23,7 +23,7 @@ class Text
      * マルチバイト対応で、文字列を空白文字で区切る
      *
      * @param string $string
-     * @return array
+     * @return string[]
      */
     static public function splitBySpace(string $string): array
     {

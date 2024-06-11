@@ -15,7 +15,7 @@ class Sql
         return \str_replace(
             ['\\', '%', '_'],
             ['\\\\', '\%', '\_'],
-            $text
+            $text,
         );
     }
 }
