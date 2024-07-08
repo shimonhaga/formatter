@@ -53,6 +53,7 @@ Time::clock2number('1:40'); // -> 100
 Time::clock2number('1-40', '-'); // -> 100
 ```
 
+
 ### 数値
 #### removeComma
 数字的な文字列からカンマを取り除く。
@@ -89,6 +90,7 @@ Number::removeComma(222333, ' '); // -> 222 333
 Number::removeComma('111=222', ' ', '='); // -> 111 222
 ```
 
+
 ### SQL 関連
 #### sanitizeTextForSearchQuery
 前方一致や後方一致を安全に行うための文字列サニタイザ。
@@ -96,6 +98,61 @@ Number::removeComma('111=222', ' ', '='); // -> 111 222
 ```php
 Sql::sanitizeTextForSearchQuery('%test'); // -> \%test
 ```
+
+
+### 文字列系
+#### マルチバイト対応trim
+マルチバイト対応で、文字列の前後から空白を取り除く。
+
+```php
+Text::trim('　a23 あああ '); // -> a23 あああ
+```
+
+#### マルチバイト対応で空白で文字列を配列にする(explode)
+マルチバイト対応で、文字列を空白文字で区切る。
+
+```php
+Text::splitBySpace('　a23　あああ　') // -> ['a23', 'あああ']
+```
+
+
+### Excel 関連
+#### 列番号をアルファベットに変換する
+変換できない場合は false を返す。
+
+```php
+Excel::alphabet(0); // -> false
+Excel::alphabet(1); // -> A
+Excel::alphabet(27); // -> AA
+```
+
+#### 列のアルファベットを列番号に変換する
+変換できない場合は false を返す。
+
+```php
+Excel::index('エラー'); // -> false
+Excel::index('A');; // -> 1
+Excel::index('AA'); // -> 27
+```
+
+
+### 範囲
+#### n番台の最初の値を取得する
+第1引数は、桁の先頭の値。
+第2引数は、桁の数。
+
+```php
+Range::lowerBound(1, 3); // -> 100
+```
+
+#### n番台の最後の値を取得する
+第1引数は、桁の先頭の値。
+第2引数は、桁の数。
+
+```php
+Range::upperBound(1, 3); // -> 199
+```
+
 
 ## Test
 ```bash

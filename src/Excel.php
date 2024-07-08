@@ -8,7 +8,7 @@ class Excel
     const CODE = 65;
 
     /**
-     * アルファベットに変換する
+     * 列番号をアルファベットに変換する
      * @param int $index
      * @return string|false
      */
@@ -30,10 +30,10 @@ class Excel
     }
 
     /**
-     * Undocumented function
+     * 列のアルファベットを列番号に変換する
      *
      * @param string $alphabets
-     * @return number|false
+     * @return int|false
      */
     static public function index(string $alphabets)
     {
