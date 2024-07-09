@@ -18,6 +18,14 @@ class RangeTest extends TestCase
         // 3000番台
         $result = Range::lowerBound(3, 4);
         $this->assertEquals(3000, $result);
+
+        // 920番台
+        $result = Range::lowerBound(92, 3);
+        $this->assertEquals(920, $result);
+
+        // 800番台
+        $result = Range::lowerBound(80, 3);
+        $this->assertEquals(800, $result);
     }
 
     public function test_upperBound()
@@ -33,5 +41,17 @@ class RangeTest extends TestCase
         // 3000番台
         $result = Range::upperBound(3, 4);
         $this->assertEquals(3999, $result);
+
+        // 920番台
+        $result = Range::upperBound(92, 3);
+        $this->assertEquals(929, $result);
+
+        // 890番台
+        $result = Range::upperBound(89, 3);
+        $this->assertEquals(899, $result);
+
+        // 700番台 (2桁目まで保証)
+        $result = Range::upperBound(70, 3);
+        $this->assertEquals(709, $result);
     }
 }
